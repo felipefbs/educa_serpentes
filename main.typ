@@ -13,7 +13,7 @@
 #artigo-cabecalho(
   titulo,
   autores,
-  filiacao: "Universidade Federal",
+  filiacao: "Instituto Federal de Educação, Ciência e Tecnologia da Paraíba",
   data: "2026",
 )
 
@@ -31,4 +31,4 @@
 
 #include "agradecimentos.typ"
 
-#bibliography("referencias.bib")
+#bibliography("referencias.bib", title: "Referências")
