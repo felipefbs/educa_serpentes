@@ -1,38 +1,21 @@
+#import "formatacao.typ": *
+
+#abnt-setup()
+#let titulo = "INTERVENÇÕES EDUCATIVAS COMO ESTRATÉGIA PARA MUDANÇA EMOCIONAL E ATITUDINAL SOBRE SERPENTES NO ENSINO SUPERIOR"
+#let autores = "Mayara Olinto Vicente"
+
 #set document(
-  title: "INTERVENÇÕES EDUCATIVAS COMO ESTRATÉGIA PARA MUDANÇA EMOCIONAL E ATITUDINAL SOBRE SERPENTES NO ENSINO SUPERIOR",
-  author: "Nome do Autor",
+  title: titulo,
+  author: autores,
   date: auto,
 )
 
-#set page(
-  paper: "a4",
-  margin: (x: 3cm, y: 2.5cm),
+#artigo-cabecalho(
+  titulo,
+  autores,
+  filiacao: "Universidade Federal",
+  data: "2026",
 )
-
-#set text(
-  font: "Times New Roman",
-  size: 12pt,
-  lang: "pt",
-)
-
-#set par(
-  justify: true,
-  first-line-indent: 1.5cm,
-)
-
-#show heading: set text(12pt, weight: "bold")
-
-#align(center)[
-  #text(14pt, weight: "bold")[#context document.title]
-]
-
-#v(1cm)
-
-#align(center)[
-  #text(12pt)[#context document.author]
-]
-
-#v(2cm)
 
 #include "resumo.typ"
 
