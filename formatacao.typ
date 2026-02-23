@@ -8,14 +8,14 @@
     margin: (top: 3cm, bottom: 2cm, left: 3cm, right: 2cm),
   )
 
-  // Corpo do texto: fonte 12, alinhado e com entrelinhamento ~1,5
+  // Corpo do texto: fonte 12, alinhado e com espaçamento simples (conforme normas editoriais)
   set text(
     font: "Times New Roman",
     size: 12pt,
   )
 
   set par(
-    leading: 1.5em,
+    leading: 1em,
     justify: true,
     first-line-indent: 1.25cm,
   )
@@ -28,14 +28,14 @@
 
   // Estilo para seções de nível 1 (títulos principais)
   show heading.where(level: 1): it => {
-    set block(above: 12pt, below: 12pt)
+    set block(above: 24pt, below: 24pt)
     set text(weight: "bold", size: 12pt)
     it
   }
 
   // Estilo para seções de nível 2
   show heading.where(level: 2): it => {
-    set block(above: 12pt, below: 12pt)
+    set block(above: 18pt, below: 18pt)
     set text(weight: "bold", size: 12pt)
     it
   }
@@ -63,7 +63,7 @@
 
 // Resumo em português (NBR 6028)
 #let resumo(body, keywords: ()) = {
-  set par(first-line-indent: 0pt, leading: 1.5em, justify: true)
+  set par(first-line-indent: 0pt, leading: 1em, justify: true)
 
   align(center)[
     strong("RESUMO")
@@ -73,7 +73,7 @@
   body
 
   if keywords.len() > 0 {
-    v(206pt)
+    v(12pt)
     strong("Palavras-chave: ")
     keywords.join("; ") + "."
   }
@@ -81,7 +81,7 @@
 
 // Abstract em língua estrangeira (NBR 6028 adaptada)
 #let abstract(body, keywords: ()) = {
-  set par(first-line-indent: 0pt, leading: 1.5em, justify: true)
+  set par(first-line-indent: 0pt, leading: 1em, justify: true)
 
   align(center)[
     strong("ABSTRACT")
@@ -128,9 +128,21 @@
   set par(
     first-line-indent: 0pt,
     hanging-indent: 1.25cm,
-    leading: 1.5em,
+    leading: 1em,
     justify: true,
   )
 
   conteudo
+}
+
+// Citação longa (mais de 3 linhas) - NBR 10520
+// Usa fonte 11pt, recuo de 4cm da margem esquerda, sem aspas
+#let citacao-longa(body) = {
+  set text(size: 11pt)
+  set par(
+    first-line-indent: 4cm,
+    leading: 1em,
+    justify: true,
+  )
+  body
 }
